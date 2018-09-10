@@ -1,0 +1,93 @@
+%versi 2 (8-10-2016) 
+\chapter{Pendahuluan}
+\label{chap:intro}
+
+\section{Latar Belakang}
+\label{sec:label}
+
+Persamaan diferensial adalah persamaan matematika yang mengandung turunan-turunan dari suatu fungsi yang tidak diketahui yang dinamakan \begin{math} y(x) \end{math} dan yang ditentukan dari persamaan tersebut. Persamaan diferensial banyak digunakan untuk pemodelan dalam berbagai bidang seperti fisika (hukum Newton), kimia (hukum Bernoulli), ekonomi, biologi, dan lain-lain. Persamaan diferensial dibagi menjadi dua, yaitu persamaan diferensial biasa dan persamaan diferensial parsial. Persamaan diferensial biasa adalah persamaan diferensial yang hanya mengandung satu variabel bebas (variabel yang dapat dimanipulasi dan mempengaruhi variabel lain) dan satu variabel terikat (variabel yang keadaannya dipengaruhi oleh variabel bebas) (contoh: \begin{math}y"+3y'+2 =\sin x\end{math}). Persamaan diferensial parsial adalah persamaan diferensial yang mengandung lebih dari satu variabel bebas dan satu variabel terikat (contoh: \begin{math} \frac{\partial x}{\partial y} = (x+y) \frac{\partial y}{\partial z}\end{math}).
+
+Untuk mencari solusi persamaan diferensial, akan digunakan implementasi algoritma genetik. Algoritma genetik adalah suatu teknik heuristik yang bekerja berdasarkan pada prinsip seleksi makhluk hidup di alam (proses evolusi) dan proses penurunan genetika (hereditas) pada makhluk hidup. Algoritma ini adalah perpaduan antara bidang ilmu komputer dan bidang biologi. Dalam algoritma genetik, kumpulan solusi diibaratkan seperti sebuah makhluk individu di alam. Individu-individu ini akan mengalami proses seleksi (memilih individu mana 
+
+
+Individu dalam algoritma genetik akan diproses dengan menggunakan Backus-Naur \textit{Form} (BNF). BNF adalah sebuah notasi untuk mengekspresikan suatu tata bahasa (\textit{grammar}) dalam bentuk aturan produksi. BNF terdiri atas simbol \textit{terminal} dan simbol \textit{non-terminal}. Sebuah \textit{grammar} dapat direpresentasikan dengan \textit{tuple} (\textit{record}): (\begin{math} {N, T, P, S} \end{math}). \textit{N} adalah himpunan simbol-simbol \textit{non}-\textit{terminal}. \textit{T} adalah himpunan simbol-simbol \textit{terminal}. \textit{P} adalah himpunan aturan-aturan produksi yang memetakan simbol-simbol \textit{non}-\textit{terminal} ke simbol-simbol \textit{terminal} maupun simbol-simbol \textit{non}-\textit{terminal}. \textit{S} adalah simbol awal (\textit{start symbol}) yang merupakan anggota dari \textit{N}.
+
+Dalam skripsi ini akan dibangun sebuah perangkat lunak dengan \textit{input} berupa persamaan diferensial, baik persamaan diferensial biasa atau persamaan diferensial parsial dan \textit{output} perangkat lunak adalah fungsi solusi (jawaban) dari persamaan diferensial. Perangkat lunak ini akan memakai implementasi algoritma genetik. Algoritma genetik dipilih karena algoritma ini dapat mendapatkan solusi dari persamaan diferensial dengan memasukkan banyak parameter persamaan diferensial. Individu yang dihasilkan algoritma genetik  akan diterjemahkan ke dalam perangkat lunak menggunakan notasi Backus-Naur \textit{Form} (BNF).
+
+\section{Rumusan Masalah}
+\label{sec:rumusan}
+
+Berdasarkan latar belakang yang telah diuraikan di atas, dapat dirumuskan permasalahan sebagai berikut:
+
+\begin{enumerate}
+
+\item Bagaimana cara membangun solusi untuk persamaan diferensial dengan algorima genetik?
+\item Bagaimana cara memproses individu dalam algoritma genetik dengan notasi BNF?
+
+\end{enumerate}
+
+\section{Tujuan}
+\label{sec:tujuan}
+
+Berdasarkan rumusan masalah yang telah dirumuskan, maka tujuan dari pembuatan skripsi ini adalah:
+
+\begin{enumerate}
+
+\item Membangun dan merancang perangkat lunak untuk solusi persamaan diferensial dengan implementasi algoritma genetik
+\item Mengimplementasikan notasi BNF ke dalam perangkat lunak agar dapat memproses individu dalam algoritma genetik
+
+\end{enumerate}
+
+\section{Batasan Masalah}
+\label{sec:batasan}
+
+Ruang lingkup dari skripsi ini dibatasi oleh batasan-batasan masalah sebagai berikut:
+
+\begin{enumerate}
+ 	\item Persamaan diferensial biasa dan persamaan diferensial parsial yang akan diuji dalam pengujian perangkat lunak hanya persamaan diferensial bersifat linier
+	\item Persamaan diferensial parsial yang akan diuji dalam pengujian perangkat lunak hanya persamaan diferensial parsial berdimensi dua
+\end{enumerate}
+
+
+\section{Metodologi}
+\label{sec:metlit}
+
+Langkah-langkah yang akan dilakukan dalam pembuatan skripsi ini adalah:
+
+\begin{enumerate}
+	\item Melakukan studi literatur
+		\begin{enumerate}
+			\item Studi literatur persamaan diferensial biasa dan persamaan diferensial parsial
+			\item Studi literatur algoritma genetik
+			\item Studi literatur algoritma \textit{evolutionary grammar}
+			\item Studi literatur notasi Backus-Naur \textit{Form} (BNF)
+		\end{enumerate}
+	\item Menganalisis, merancang, membangun, dan mengembangkan perangkat lunak
+		\begin{enumerate}
+			\item Menganalisis dan merancang kebutuhan fitur-fitur utama perangkat lunak seperti fitur syarat batas persamaan diferensial dan fitur untuk mencari solusi persamaan diferensial
+			\item Membangun dan mengembangkan perangkat lunak berdasarkan fitur-fitur utama yang telah ditentukan
+			\item Mengimplementasikan algoritma genetik ke dalam perangkat lunak
+			\item Mengimplementasikan notasi BNF ke dalam perangkat lunak
+		\end{enumerate}
+	\item Melakukan pengujian perangkat lunak dengan masukkan persamaan diferensial biasa dan persamaan diferensial parsial
+			\item Menguji performansi algoritma genetik dari berapa banyak iterasi yang dibutuhkan untuk mencari dan menemukan solusi persamaan diferensial
+			\item Membuat grafik perkembangan iterasi algoritma genetik dalam mencari dan menemukan solusi persamaan diferensial
+	\item Menarik dan membuat kesimpulan dari hasil pengujian perangkat lunak
+\end{enumerate}
+
+\section{Sistematika Pembahasan}
+\label{sec:sispem}
+
+Sistematika pembahasan skripsi ini adalah sebagai berikut:
+
+\begin{enumerate}
+ 	\item Bab 1 berisi tentang pendahuluan, yaitu latar belakang, rumusan masalah, tujuan, batasan masalah, metodologi penelitian, dan sistematika pembahasan
+	\item Bab 2 berisi tentang landasan teori yang digunakan untuk mendukung perancangan dan pembangunan perangkat lunak, yaitu persamaan diferensial (persamaan diferensial biasa dan persamaan diferensial parsial), algoritma genetik, notasi Backus-Naur
+	         \textit{Form}, dan \textit{evolutionary grammar}
+	\item Bab 3 berisi tentang analisis kebutuhan fitur-fitur utama perangkat lunak untuk mencari solusi persamaan diferensial, yaitu fitur syarat batas persamaan diferensial dan fitur untuk menampilkan keluaran solusi persamaan diferensial
+	\item Bab 4 berisi tentang perancangan dan pembangunan perangkat lunak untuk mencari solusi persamaan diferensial. Bab ini berisi perancangan antarmuka (\textit{interface}) perangkat lunak, masukkan (\textit{input}), keluaran (\textit{output}), diagram kelas
+                   \textit{class diagram}, dan \textit{use}-\textit{case} \textit{diagram}. Perangkat lunak akan dibangun berdasarkan perancangan-perancangan yang telah disebutkan
+	\item Bab 5 berisi tentang pengujian perangkat lunak dengan masukkan persamaan diferensial biasa dan persamaan diferensial parsial. Masukkan tersebut akan dicari solusinya dengan implementasi algoritma genetik dan notasi BNF di dalam perangkat lunak. Setelah
+	         solusi persamaan diferensial ditemukan, maka perangkat lunak akan menampilkan grafik perkembangan iterasi algoritma genetik untuk mencari keluaran solusi
+	\item Bab 6 berisi tentang kesimpulan dari hasil pengujian perangkat lunak dan saran untuk pengembangan penelitian dengan topik sama di waktu yang akan datang
+\end{enumerate}

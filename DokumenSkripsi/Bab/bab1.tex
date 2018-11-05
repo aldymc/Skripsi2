@@ -5,14 +5,14 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-Persamaan diferensial adalah persamaan matematika yang mengandung turunan-turunan dari suatu fungsi yang tidak diketahui yang dinamakan \begin{math} y(x) \end{math} dan yang ditentukan dari persamaan tersebut. Persamaan diferensial banyak digunakan untuk pemodelan dalam berbagai bidang seperti fisika (hukum Newton), kimia (hukum Bernoulli), ekonomi, biologi, dan lain-lain. Persamaan diferensial dibagi menjadi dua, yaitu persamaan diferensial biasa dan persamaan diferensial parsial. Persamaan diferensial biasa adalah persamaan diferensial yang hanya mengandung satu variabel bebas (variabel yang dapat dimanipulasi dan mempengaruhi variabel lain) dan satu variabel terikat (variabel yang keadaannya dipengaruhi oleh variabel bebas) (contoh: \begin{math}y"+3y'+2 =\sin x\end{math}). Persamaan diferensial parsial adalah persamaan diferensial yang mengandung lebih dari satu variabel bebas dan satu variabel terikat (contoh: \begin{math} \frac{\partial x}{\partial y} = (x+y) \frac{\partial y}{\partial z}\end{math}).
+Persamaan diferensial adalah  suatu persamaan matematika yang mengandung turunan-turunan dari suatu fungsi yang tidak diketahui (\begin{math} y(x) \end{math}) dari satu atau lebih variabel bebas terhadap satu atau lebih peubah tak bebas. Persamaan diferensial banyak digunakan untuk pemodelan dalam berbagai bidang seperti fisika (hukum Newton), kimia (hukum Bernoulli), ekonomi, biologi, dan lain-lain. Persamaan diferensial dibagi menjadi dua, yaitu persamaan diferensial biasa dan persamaan diferensial parsial. Persamaan diferensial biasa adalah persamaan diferensial yang hanya mengandung satu variabel bebas (variabel yang dapat dimanipulasi dan mempengaruhi variabel lain) dan satu variabel terikat (variabel yang keadaannya dipengaruhi oleh variabel bebas) (contoh: \begin{math}y"+3y'+2 =\sin x\end{math}). Persamaan diferensial parsial adalah persamaan diferensial yang mengandung lebih dari satu variabel bebas dan satu variabel terikat (contoh: \begin{math} \frac{\partial x}{\partial y} = (x+y) \frac{\partial y}{\partial z}\end{math}).
 
-Untuk mencari solusi persamaan diferensial, akan digunakan implementasi algoritma genetik. Algoritma genetik adalah suatu teknik heuristik yang bekerja berdasarkan pada prinsip seleksi makhluk hidup di alam (proses evolusi) dan proses penurunan genetika (hereditas) pada makhluk hidup. Algoritma ini adalah perpaduan antara bidang ilmu komputer dan bidang biologi. Dalam algoritma genetik, kumpulan solusi diibaratkan seperti sebuah makhluk individu di alam. Individu-individu ini akan mengalami proses seleksi (memilih individu mana 
-
+Untuk mencari solusi persamaan diferensial, akan digunakan implementasi algoritma genetik. Algoritma genetik adalah suatu teknik heuristik yang bekerja berdasarkan pada prinsip seleksi makhluk hidup di alam (proses evolusi) dan proses penurunan genetika (hereditas) pada makhluk hidup. Algoritma ini adalah perpaduan antara bidang ilmu komputer dan bidang biologi. Dalam algoritma genetik, kumpulan solusi diibaratkan seperti sebuah makhluk individu di alam. Individu-individu ini akan mengalami proses seleksi (memilih individu mana yang memiliki kemungkinan bertahan hidup yang tinggi di alam, dalam hal ini solusi mana yang paling mendekati untuk mampu memecahkan persamaan diferensial) dan mutasi (perubahan karakteristik individu, mutasi diperlukan untuk menjaga keberagaman gen-gen individu agar tidak monoton sehingga diharapkan mampu memperbaiki individu agar dapat mencari solusi).
+Algoritma genetik akan berhenti berjalan apabila algoritma sudah menemukan solusi pada ambang batas (\textit{threshold}) iterasi (generasi) yang telah ditetapkan atau tidak ditemukan solusi yang lebih baik setelah sekian kali iterasi.
 
 Individu dalam algoritma genetik akan diproses dengan menggunakan Backus-Naur \textit{Form} (BNF). BNF adalah sebuah notasi untuk mengekspresikan suatu tata bahasa (\textit{grammar}) dalam bentuk aturan produksi. BNF terdiri atas simbol \textit{terminal} dan simbol \textit{non-terminal}. Sebuah \textit{grammar} dapat direpresentasikan dengan \textit{tuple} (\textit{record}): (\begin{math} {N, T, P, S} \end{math}). \textit{N} adalah himpunan simbol-simbol \textit{non}-\textit{terminal}. \textit{T} adalah himpunan simbol-simbol \textit{terminal}. \textit{P} adalah himpunan aturan-aturan produksi yang memetakan simbol-simbol \textit{non}-\textit{terminal} ke simbol-simbol \textit{terminal} maupun simbol-simbol \textit{non}-\textit{terminal}. \textit{S} adalah simbol awal (\textit{start symbol}) yang merupakan anggota dari \textit{N}.
 
-Dalam skripsi ini akan dibangun sebuah perangkat lunak dengan \textit{input} berupa persamaan diferensial, baik persamaan diferensial biasa atau persamaan diferensial parsial dan \textit{output} perangkat lunak adalah fungsi solusi (jawaban) dari persamaan diferensial. Perangkat lunak ini akan memakai implementasi algoritma genetik. Algoritma genetik dipilih karena algoritma ini dapat mendapatkan solusi dari persamaan diferensial dengan memasukkan banyak parameter persamaan diferensial. Individu yang dihasilkan algoritma genetik  akan diterjemahkan ke dalam perangkat lunak menggunakan notasi Backus-Naur \textit{Form} (BNF).
+Dalam skripsi ini akan dibangun sebuah perangkat lunak dengan masukkan (\textit{input}) berupa persamaan diferensial, baik persamaan diferensial biasa atau persamaan diferensial parsial dan keluaran (\textit{output}) perangkat lunak adalah fungsi solusi (jawaban) dari persamaan diferensial. Perangkat lunak ini akan memakai implementasi algoritma genetik. Algoritma genetik dipilih karena algoritma ini dapat mendapatkan solusi dari persamaan diferensial dengan memasukkan banyak parameter persamaan diferensial. Individu yang dihasilkan algoritma genetik  akan diterjemahkan ke dalam perangkat lunak menggunakan notasi Backus-Naur \textit{Form} (BNF).
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
@@ -21,8 +21,8 @@ Berdasarkan latar belakang yang telah diuraikan di atas, dapat dirumuskan permas
 
 \begin{enumerate}
 
-\item Bagaimana cara membangun solusi untuk persamaan diferensial dengan algorima genetik?
-\item Bagaimana cara memproses individu dalam algoritma genetik dengan notasi BNF?
+	\item Bagaimana cara membangun solusi untuk persamaan diferensial dengan algorima genetik?
+	\item Bagaimana cara memproses individu dalam algoritma genetik dengan notasi BNF?
 
 \end{enumerate}
 
@@ -32,10 +32,8 @@ Berdasarkan latar belakang yang telah diuraikan di atas, dapat dirumuskan permas
 Berdasarkan rumusan masalah yang telah dirumuskan, maka tujuan dari pembuatan skripsi ini adalah:
 
 \begin{enumerate}
-
-\item Membangun dan merancang perangkat lunak untuk solusi persamaan diferensial dengan implementasi algoritma genetik
-\item Mengimplementasikan notasi BNF ke dalam perangkat lunak agar dapat memproses individu dalam algoritma genetik
-
+	\item Membangun dan merancang perangkat lunak untuk solusi persamaan diferensial dengan implementasi algoritma genetik
+	\item Mengimplementasikan notasi BNF ke dalam perangkat lunak agar dapat memproses individu dalam algoritma genetik
 \end{enumerate}
 
 \section{Batasan Masalah}

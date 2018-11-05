@@ -2,7 +2,7 @@
 %% Copyright 2011-2017 Lionov W.
 %%
 %% This file is part of the 'Template Skripsi/Tugas Akhir FTIS UNPAR'
-%%
+%%w
 %% This work may be distributed under the conditions of 
 %% the LaTeX Project Public License, either version 1.3 of this license or
 %% any later version. The latest version of this license is in
@@ -59,7 +59,7 @@
 \usepackage{titlesec}% mengubah tamnpilan judul bab
 \usepackage{float} %penempatan gambar di tempat yg seharusnya 
 \usepackage[plainpages=false,pdfpagelabels,unicode]{hyperref}% untuk \autoref,\phantomsection & link 
-\usepackage{setspace}%line spacing
+\usepackage{setspace}%line spacingk
 \usepackage[pagewise]{lineno}%line numbering
 \usepackage{emptypage}%halaman kosong antar bab
 \usepackage{graphicx}%untuk graphicspath
@@ -68,6 +68,14 @@
 \usepackage{xstring}%manipulasi string, strchar, ifstreq
 \usepackage[table]{xcolor}%untuk kode program
 \usepackage{pgffor}% untuk foreach
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{makecell}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{titlesec}
+
  
 \newcommand{\vtemplateauthor}{lionov}
 \newcommand{\dtext}[1]{{\color{lightgray} \lipsum[#1]}}%command untuk dummy text
@@ -86,10 +94,10 @@
 \newcommand{\vtextup}[3]{\IfStrEq{\vmode}{template}{\newcommand{#1}{\uppercase{\rtext{#2}}#3}}{\newcommand{#1}{\uppercase{#2}}}}
 
 %default data prodi
-\newcommand{\vprodiINA}{\rtext{<<TEKNIK INFORMATIKA>>}}
-\newcommand{\vprodiENG}{\rtext{<<INFORMATICS>>}}
-\newcommand{\vstaINA}{\rtext{<<SKRIPSI>>}} 
-\newcommand{\vstaENG}{\rtext{UNDERGRADUATE THESIS}}
+\newcommand{\vprodiINA}{\rtext{<<MATEMATIKA/FISIKA/TEKNIK INFORMATIKA>>}}
+\newcommand{\vprodiENG}{\rtext{<<MATHEMATICS/PHYSICS/INFORMATICS>>}}
+\newcommand{\vstaINA}{\rtext{<<SKRIPSI/TUGAS AKHIR>>}} 
+\newcommand{\vstaENG}{\rtext{FINAL PROJECT/UNDERGRADUATE THESIS}}
 \newcommand{\vkaprodi}{\rtext{<<Ketua Program Studi>>}}
   
 %data kaprodi 
@@ -225,15 +233,15 @@
 	\linenumber{yes}\linespacing{double} 
 	\gambar{yes}\tabel{no} 
 	\bab{1,2}\lampiran{A} 
-	\namanpm{Lionov}{1997730020}\tanggal{1}{8}{2002}
+	\namanpm{ALDY MARCELLINO CHRISTIAN}{2013730005}\tanggal{1}{8}{2002}
 	\pembimbing{\BSB}{}\penguji{\TAB}{\LNV}
-	\judulINA{Judul Bahasa Indonesia}
-	\judulENG{Judul Bahasa Inggris}
+	\judulINA{Mencari Solusi untuk Persamaan Diferensial dengan Menggunakan Algoritma Genetik}
+	\judulENG{Finding Solutions for Differential Equations by Using Genetic Algorithm}
 	\abstrakINA{Tuliskan abstrak anda di sini, dalam bahasa Indonesia }
 	\abstrakENG{Tuliskan abstrak anda di sini, dalam bahasa Inggris } 
 	\kunciINA{Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Indonesia}
 	\kunciENG{Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Inggris}
-	\untuk{kepada siapa anda mempersembahkan skripsi ini\ldots?}
+	\untuk{Pain is temporary, glory is eternal\ldots?}
 	\prakata{Tuliskan kata pengantar dari anda di sini \ldots}
 	\pgfplotsset{compat=newest}
 }{\include{data}} 
@@ -342,7 +350,7 @@
 	\begin{center} {\large \textbf{\vjudulINA}}\end{center}
 	\vspace{0.5cm}
 	adalah benar-benar karya saya sendiri, dan saya tidak melakukan penjiplakan atau pengutipan dengan cara-cara yang tidak sesuai dengan etika keilmuan yang berlaku dalam masyarakat keilmuan.}
-	\vspace{0pt}\\
+	\vspace{0pt}\\x
 	{\noindent			
 	Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhkan kepada saya, apabila di kemudian hari ditemukan adanya pelanggaran terhadap etika keilmuan dalam karya saya, atau jika ada tuntutan formal atau non-formal dari pihak lain berkaitan dengan keaslian karya saya ini.\\}
 	\vspace{0.25cm}
@@ -394,6 +402,14 @@
 }{}%vsidangakhir
 
 }{} %vsidang 
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 \tableofcontents \cleardoublepage 							% Daftar isi
 \IfStrEq{\vgambar}{yes}{\listoffigures \cleardoublepage}{} 	% Daftar gambar
